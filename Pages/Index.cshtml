@@ -1,0 +1,18 @@
+﻿@page
+@model GourmetPizza.Pages.IndexModel
+@{
+}
+<h5>Welcome to Pizza Store</h5>
+<div class="carousel slide" data-ride="carousel" data-interval="3000" style="width:100%;">
+    <div class="carousel-inner">
+        @foreach (var pizzaBase in Model.PizzaBases)
+        {
+            <div class="carousel-item @(pizzaBase == Model.PizzaBases.First() ? "active" : "")">
+                <input type="hidden" value="@pizzaBase.PizzaType" />
+                <h4>Pizza : @pizzaBase.PizzaName</h4>
+                <img src="~/images/@pizzaBase.ImageName" alt="No Image Found" style="width:100%;">
+                <h3>Pizza : $@pizzaBase.Price</h3>
+            </div>
+        }
+    </div>
+</div>

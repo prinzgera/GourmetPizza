@@ -1,0 +1,20 @@
+﻿@page
+@model GourmetPizza.Pages.PizzaTest.PurchaseModel
+@{
+}
+
+
+
+<form method="post">
+    <input type="hidden" asp-for="@Model.PizzaType"/>
+    <div><h4>Pizza : @ViewData["pizzaname"]</h4></div>
+    <div><img src="~/images/@ViewData["imagename"]" alt="No Image Found" width="800px;"/></div>
+    <div><h3>Total Price : $@ViewData["totalprice"]</h3></div>
+</form>
+
+
+
+
+
+
+

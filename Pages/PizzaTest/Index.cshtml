@@ -1,0 +1,42 @@
+﻿@page
+@model GourmetPizza.Pages.PizzaTest.IndexModel
+@{
+}
+<p>
+    <a asp-page="/Pizzas/Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.PizzaBases[0].PizzaType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PizzaBases[0].PizzaName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PizzaBases[0].Price)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.PizzaBases)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PizzaType)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PizzaName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Price)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+<div style="text-align:center">
+    Table 1: Pizza Details
+</div>
